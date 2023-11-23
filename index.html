@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Question 1:</h3>
+    <p>Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</p>
+    <pre>
+        class car{
+            constructor(wheel,color){
+                this.wheel=wheel
+                this.color=color
+            }
+        }
+        class jaguar extends car{
+            constructor(wheel,color,engine,make,seats){
+                super(wheel,color)
+                this.engine=engine
+                this.make=make
+                this.seats=seats
+            }
+        }
+        var newcar=new jaguar(4,"blue","1l","F-Pace",5)
+        console.log(newcar);
+    </pre>
+    <p>O/P: jaguar {
+        wheel: 4,
+        color: 'blue',
+        engine: '1l',
+        make: 'F-Pace',
+        seats: 5
+      }
+      </p>
+
+      <p>Reason: We create two object car and jaguar we create the prameters and we gave const newcar we gave the value and then print it .Here we use super as keyword from parent object that is car so we extend the parent object in child . </p>
+
+    <h3>Question 2: </h3>
+    <p>Write code to explain prototype chaining</p>
+    <pre>let arr=[1,2,3,4,5] ;                                  
+        console.log(Object.getPrototypeOf(arr));
+         </pre>
+    <pre>O/P: [constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toReversed: ƒ toReversed()toSorted: ƒ toSorted()toSpliced: ƒ toSpliced()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()with: ƒ with()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
+    </pre>
+    <p>Reason: getPrototypeOf is helps as to acess the prototype of the given object .</p>
+
+    <h3>Question 3:</h3>
+    <p>Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</p>
+    <pre>Array.prototype.sum=function(){
+        let total=0
+        for(let i=0;i < this.length;i++){
+            total+=this[i]
+        }
+        return total
+    }
+    let a=[1,2,3,4,5]
+    console.log(a.sum()) </pre>
+    <p>O/P: 15</p>
+      <p>Reason: we create anonmyous function.we take let total then we gave loop function i length and increase then total add thisits array index value then we return the total.we gave the array and print it. </p>
+
+    <h3>Question 4:</h3>
+    <p>Write a JavaScript function to retrieve all the names of object's own and inherited properties.</p>
+    <pre>
+        class car{
+            constructor(wheel,color){
+                this.wheel=wheel
+                this.color=color
+            }
+            startengine(){
+                console.log("car start")
+            }
+        }
+        class jaguar extends car{
+            constructor(wheel,color,engine,make,seats){
+                super(wheel,color)
+                this.engine=engine
+                this.make=make
+                this.seats=seats
+            }
+        }
+        var newcar=new jaguar(4,"blue","1l","F-Pace",5)
+        console.log(Object.keys(newcar));
+    </pre>
+    <p>O/P: [ 'wheel', 'color', 'engine', 'make', 'seats' ]</p>
+    <p>Reason : we create the inheritance parent and child car and jaguar and the properties are name and we gave the newcar and retirve the keys and the we use the key as keyword then we print code.</p>
+   <script src="./script.js"></script>
+</body>
+</html>
